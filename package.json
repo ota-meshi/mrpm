@@ -16,7 +16,7 @@
   "author": "Yosuke Ota",
   "license": "MIT",
   "bin": {
-    "mrpm": "index.js"
+    "mrpm": "bin/mrpm.js"
   },
   "bugs": {
     "url": "https://github.com/ota-meshi/mrpm/issues"
