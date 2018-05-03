@@ -7,7 +7,7 @@ const chalk = require('chalk')
 const mrpm = require('mrpm')
 
 const command = process.argv[2]
-const args = process.argv.splice(3)
+const args = process.argv.slice(3)
 
 const opts = {cwd: process.cwd()}
 
