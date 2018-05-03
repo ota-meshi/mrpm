@@ -1,0 +1,32 @@
+{
+  "name": "mrpm",
+  "version": "0.0.0",
+  "description": "monorepo package manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ota-meshi/mrpm.git"
+  },
+  "keywords": [
+    "monorepo"
+  ],
+  "author": "Yosuke Ota",
+  "license": "MIT",
+  "bin": {
+    "mrpm": "index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/ota-meshi/mrpm/issues"
+  },
+  "homepage": "https://github.com/ota-meshi/mrpm#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1"
+  },
+  "dependencies": {
+    "toposort": "^1.0.6",
+    "find-config": "^1.0.0"
+  }
+}
