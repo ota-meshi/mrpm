@@ -25,7 +25,7 @@ It was created to execute a simple npm command in order of dependencies.
 npm i -D mrpm
 ```
 
-### dir & package.json example
+### Example of dir & package.json
 
 ```
 pkgroot
@@ -37,8 +37,8 @@ pkgroot
 |  |  +--package.json
 |  |
 |  +--subpkg2
-|  |  |
-|  |  +--package.json
+|     |
+|     +--package.json
 |
 +--package.json
 ```
@@ -76,7 +76,7 @@ pkgroot
 }
 ```
 
-### command examples
+### Example of commands
 
 * `npm install` for each monorepo projects.
 
@@ -108,5 +108,50 @@ mrpm run xxx
 mrpm prune
 ```
 
+## Example of Deploy with [Travis CI](https://travis-ci.org/).
 
+### files
+
+* `package.json`
+* `.travis.yml`
+* `deploy.sh`
+
+### package.json
+
+```json5
+{
+  //...
+  "private": true,
+  //...
+  "scripts": {
+    //...
+    "publish:all": "mrpm publish",
+    //...
+  },
+  "devDependencies": {
+    "mrpm": "0.0.1"
+  }
+}
+```
+
+### .travis.yml
+
+```yml
+language: node_js
+node_js:
+  - "node"
+
+deploy:
+  provider: script
+  script: sh $TRAVIS_BUILD_DIR/deploy.sh
+```
+
+### deploy.sh
+
+```sh
+#!/usr/bin/env bash
+
+npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+npm run publish:all
+```
 
