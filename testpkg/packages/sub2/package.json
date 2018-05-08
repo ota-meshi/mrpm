@@ -1,0 +1,15 @@
+{
+  "name": "sub2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "fail": "exit 1",
+    "test": "exit 0"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheetah-grid": "*"
+  }
+}
