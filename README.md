@@ -129,7 +129,7 @@ mrpm prune
     //...
   },
   "devDependencies": {
-    "mrpm": "0.0.1"
+    "mrpm": "1.0.0"
   }
 }
 ```
