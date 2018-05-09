@@ -160,7 +160,7 @@ module.exports = {
       'error',
       {
         'array': false,
-        'object': true
+        'object': false
       },
       {
         'enforceForRenamedProperties': false
