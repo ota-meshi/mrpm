@@ -4,7 +4,7 @@
   "description": "monorepo package manager",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/**/*.js --reporter dot --timeout 10000",
+    "test": "nyc --reporter=lcov mocha tests/**/*.js --reporter dot --timeout 10000",
     "test:d": "mocha --inspect --debug-brk tests/**/*.js --reporter dot",
     "lint": "eslint lib tests",
     "pretest": "npm run -s lint"
@@ -37,7 +37,7 @@
     "chai": "^4.1.2",
     "eslint": "^4.19.1",
     "mocha": "^5.1.1",
-    "nyc": "^11.7.2",
+    "nyc": "^11.7.1",
     "rimraf": "^2.6.2"
   },
   "dependencies": {
