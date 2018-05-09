@@ -16,7 +16,8 @@
   "keywords": [
     "monorepo",
     "npm",
-    "mono-repo"
+    "mono-repo",
+    "package"
   ],
   "author": "Yosuke Ota",
   "license": "MIT",
