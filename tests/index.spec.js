@@ -24,6 +24,9 @@ beforeEach(() => new Promise(((resolve) => {
               }
 
               mrpm(opts, 'i', [], (err) => {
+                if (err) {
+                  console.error(err)
+                }
                 expect(err).to.be.a('null')
                 resolve()
               })
