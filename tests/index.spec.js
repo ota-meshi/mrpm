@@ -2,7 +2,7 @@
 'use strict'
 
 const chai = require('chai')
-const {expect} = chai
+const expect = chai.expect
 const fs = require('fs')
 const path = require('path')
 const rimraf = require('rimraf')
@@ -24,6 +24,9 @@ beforeEach(() => new Promise(((resolve) => {
               }
 
               mrpm(opts, 'i', [], (err) => {
+                if (err) {
+                  console.error(err)
+                }
                 expect(err).to.be.a('null')
                 resolve()
               })
