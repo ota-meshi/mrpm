@@ -1,10 +1,10 @@
 {
   "name": "mrpm",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "monorepo package manager",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha tests/**/*.js --reporter dot --timeout 10000",
+    "test": "nyc --reporter=lcov mocha tests/**/*.js --reporter dot --timeout 10000",
     "test:d": "mocha --inspect --debug-brk tests/**/*.js --reporter dot",
     "lint": "eslint lib tests",
     "pretest": "npm run -s lint"
@@ -14,7 +14,9 @@
     "url": "git+https://github.com/ota-meshi/mrpm.git"
   },
   "keywords": [
-    "monorepo"
+    "monorepo",
+    "npm",
+    "mono-repo"
   ],
   "author": "Yosuke Ota",
   "license": "MIT",

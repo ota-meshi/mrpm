@@ -34,7 +34,7 @@ beforeEach(() => new Promise(((resolve) => {
 })))
 
 describe('mrpm', () => {
-  it('should install sub-package’s dependencies', () => {
+  it('install sub-package’s dependencies', () => {
     const stats = fs.lstatSync(
         path.resolve(__dirname, '../testpkg/packages/sub1/node_modules')
     )
@@ -46,7 +46,7 @@ describe('mrpm', () => {
     expect(files).to.contain('cheetah-grid')
   })
 
-  it('should run scripts in sub-packages', () => {
+  it('run scripts in sub-packages', () => {
     const opts = {
       cwd: path.resolve(__dirname, '../testpkg')
     }
@@ -56,7 +56,7 @@ describe('mrpm', () => {
     })
   })
 
-  it('should fail to run scripts in sub-packages', () => {
+  it('fail to run scripts in sub-packages', () => {
     const opts = {
       cwd: path.resolve(__dirname, '../testpkg')
     }
@@ -65,6 +65,16 @@ describe('mrpm', () => {
       expect(err.message).to.equal('Failure')
       expect(err.scope).to.equal('sub2')
       expect(err.code).to.equal(1)
+    })
+  })
+
+  it('publish to run scripts in sub-packages', () => {
+    const opts = {
+      cwd: path.resolve(__dirname, '../testpkg')
+    }
+
+    return mrpm(opts, 'publish', [], (err) => {
+      expect(err).to.be.a('null')
     })
   })
 })
