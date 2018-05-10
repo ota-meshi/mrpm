@@ -29,18 +29,12 @@ npm i -D mrpm
 
 ```
 pkgroot
-|
 +--packages
-|  |
 |  +--subpkg1
-|  |  |
-|  |  +--package.json
-|  |
-|  +--subpkg2
-|     |
-|     +--package.json
-|
-+--package.json
+|  |  `--package.json
+|  `--subpkg2
+|     `--package.json
+`--package.json
 ```
 
 `pkgroot/package.json`
@@ -129,7 +123,7 @@ mrpm prune
     //...
   },
   "devDependencies": {
-    "mrpm": "1.0.0"
+    "mrpm": "x.x.x"
   }
 }
 ```
