@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cheetah-grid": "*"
+    "cheetah-grid": "*",
+    "vue-cheetah-grid": "*"
   }
 }

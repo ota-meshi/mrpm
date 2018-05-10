@@ -4,7 +4,7 @@
   "description": "monorepo package manager",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=lcov mocha tests/**/*.js --reporter dot --timeout 10000",
+    "test": "nyc --reporter=lcov mocha tests/**/*.js --reporter dot --timeout 30000",
     "test:d": "mocha --inspect --debug-brk tests/**/*.js --reporter dot",
     "lint": "eslint lib tests",
     "pretest": "npm run -s lint"

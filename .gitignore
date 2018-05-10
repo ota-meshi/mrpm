@@ -1,3 +1,5 @@
 node_modules
 .nyc_output
 coverage
+/testpkg/packages/sub1/package-lock.json
+/testpkg/packages/sub2/package-lock.json
