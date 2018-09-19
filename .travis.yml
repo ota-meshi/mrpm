@@ -1,6 +1,5 @@
 language: node_js
 node_js:
-  - "4"
   - "node"
   - "6.5.0"
   - "6"
@@ -16,3 +15,9 @@ deploy:
     tags: true
 notifications:
   email: false
+before_install:
+  - '[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest' # skipped when using node 9
+  - npm install -g greenkeeper-lockfile
+before_script:
+  - greenkeeper-lockfile-update
+after_script: greenkeeper-lockfile-upload

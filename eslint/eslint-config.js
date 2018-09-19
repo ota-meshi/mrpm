@@ -178,6 +178,8 @@ module.exports = {
     // ECMAScript 6
     'no-confusing-arrow': 'off',
     // 'prefer-template': 'off',
+    'prefer-object-spread': 'off',
+    'require-unicode-regexp': 'off',
 
   }
 
