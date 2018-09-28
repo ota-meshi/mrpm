@@ -5,44 +5,34 @@ const chai = require('chai')
 const expect = chai.expect
 const fs = require('fs')
 const path = require('path')
-const rimraf = require('rimraf')
 const mrpm = require('../index')
+const {initPkgs} = require('./test-utils')
 
+const pkgRoot = path.resolve(__dirname, '../test-fixtures/testpkg')
 
-beforeEach(() => new Promise(((resolve) => {
-  rimraf(
-      path.resolve(__dirname, '../testpkg/**/*/node_modules'),
-      () => {
-        rimraf(
-            path.resolve(
-                __dirname,
-                '../testpkg/packages/*/package-lock.json'
-            ),
-            () => {
-              const opts = {
-                cwd: path.resolve(__dirname, '../testpkg')
-              }
-
-              mrpm(opts, 'i', [], (err) => {
-                if (err) {
-                  console.error(err)
-                }
-                expect(err).to.be.a('null')
-                resolve()
-              })
-            }
-        )
+beforeEach(() => initPkgs(pkgRoot).then(
+    () => {
+      const opts = {
+        cwd: pkgRoot
       }
-  )
-})))
+      return new Promise((resolve) => mrpm(opts, 'i', [], (err) => {
+        if (err) {
+          console.error(err)
+        }
+        expect(err).to.be.a('null')
+        resolve()
+      }))
+    }
+))
+
 
 describe('mrpm', () => {
   it('install sub-package’s dependencies', () => {
     const stats = fs.lstatSync(
-        path.resolve(__dirname, '../testpkg/packages/sub1/node_modules')
+        path.resolve(pkgRoot, './packages/sub1/node_modules')
     )
     const files = fs.readdirSync(
-        path.resolve(__dirname, '../testpkg/packages/sub2/node_modules')
+        path.resolve(pkgRoot, './packages/sub2/node_modules')
     )
 
     expect(stats.isDirectory()).to.be.true
@@ -51,7 +41,7 @@ describe('mrpm', () => {
 
   it('run scripts in sub-packages', () => {
     const opts = {
-      cwd: path.resolve(__dirname, '../testpkg')
+      cwd: pkgRoot
     }
 
     return mrpm(opts, 'run', ['test'], (err) => {
@@ -61,7 +51,7 @@ describe('mrpm', () => {
 
   it('fail to run scripts in sub-packages', () => {
     const opts = {
-      cwd: path.resolve(__dirname, '../testpkg')
+      cwd: pkgRoot
     }
 
     return mrpm(opts, 'run', ['fail'], (err) => {
@@ -73,7 +63,7 @@ describe('mrpm', () => {
 
   it('publish to run scripts in sub-packages', () => {
     const opts = {
-      cwd: path.resolve(__dirname, '../testpkg')
+      cwd: pkgRoot
     }
 
     return mrpm(opts, 'publish', [], (err) => {
