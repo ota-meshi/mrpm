@@ -14,21 +14,16 @@ module.exports = {
   },
   'extends': [
     'eslint:all',
+    'plugin:node/recommended'
   ],
   'rules': {
 
     'semi': ['error', 'never'],
     'no-console': 'off',
-    'no-extra-parens': 'off',
-    'no-irregular-whitespace': [
-      'error',
-      {'skipRegExps': true}
-    ],
+    'no-return-assign': 'off',
     'no-prototype-builtins': 'off',
     'no-template-curly-in-string': 'off',
-    'valid-jsdoc': 'off',
     'class-methods-use-this': 'off',
-    'consistent-return': 1,
     'guard-for-in': 'off',
     'no-case-declarations': 'off',
     'no-else-return': 'off',
@@ -38,8 +33,6 @@ module.exports = {
       {'boolean': false, 'number': true, 'string': false}
     ],
     'no-implicit-globals': 'off',
-    'no-invalid-this': 'off',
-    'no-loop-func': 'off',
     'no-magic-numbers': 'off',
     'no-param-reassign': 'off',
     'no-warning-comments': 'warn',
@@ -60,7 +53,7 @@ module.exports = {
     ],
     'no-use-before-define': ['error', {'functions': false, 'classes': false}],
     'callback-return': 'off',
-    'global-require': 'off', // TODO
+    'global-require': 'off',
     'no-process-env': 'off',
     'brace-style': [
       'error',
@@ -126,7 +119,6 @@ module.exports = {
     'no-ternary': 'off',
     'no-trailing-spaces': 'error',
     'no-underscore-dangle': 'off',
-    'object-curly-newline': 'off',
     'object-property-newline': [
       'error',
       {'allowMultiplePropertiesPerLine': true}
@@ -171,13 +163,9 @@ module.exports = {
       'error',
       'single'
     ],
-    'array-element-newline': 'off',
-    'function-paren-newline': 'off',
-    'array-bracket-newline': 'off',
 
     // ECMAScript 6
     'no-confusing-arrow': 'off',
-    // 'prefer-template': 'off',
     'prefer-object-spread': 'off',
     'require-unicode-regexp': 'off',
 

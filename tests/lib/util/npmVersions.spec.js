@@ -11,7 +11,11 @@ describe('npmVersions', () => {
     rootDir: process.cwd()
   }, 'mrpm').
     then((vers) => {
-      expect(vers).to.include.members(['0.0.1', '1.0.0', '1.0.1'])
+      expect(vers).to.include.members([
+        '0.0.1',
+        '1.0.0',
+        '1.0.1'
+      ])
     }))
   it('404 versions', () => npmVersions({
     name: 'test',

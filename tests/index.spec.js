@@ -10,30 +10,24 @@ const {initPkgs} = require('./test-utils')
 
 const pkgRoot = path.resolve(__dirname, '../test-fixtures/testpkg')
 
-beforeEach(() => initPkgs(pkgRoot).then(
-    () => {
-      const opts = {
-        cwd: pkgRoot
-      }
-      return new Promise((resolve) => mrpm(opts, 'i', [], (err) => {
-        if (err) {
-          console.error(err)
-        }
-        expect(err).to.be.a('null')
-        resolve()
-      }))
+beforeEach(() => initPkgs(pkgRoot).then(() => {
+  const opts = {
+    cwd: pkgRoot
+  }
+  return new Promise((resolve) => mrpm(opts, 'i', [], (err) => {
+    if (err) {
+      console.error(err)
     }
-))
+    expect(err).to.be.a('null')
+    resolve()
+  }))
+}))
 
 
 describe('mrpm', () => {
   it('install sub-package’s dependencies', () => {
-    const stats = fs.lstatSync(
-        path.resolve(pkgRoot, './packages/sub1/node_modules')
-    )
-    const files = fs.readdirSync(
-        path.resolve(pkgRoot, './packages/sub2/node_modules')
-    )
+    const stats = fs.lstatSync(path.resolve(pkgRoot, './packages/sub1/node_modules'))
+    const files = fs.readdirSync(path.resolve(pkgRoot, './packages/sub2/node_modules'))
 
     expect(stats.isDirectory()).to.be.true
     expect(files).to.contain('cheetah-grid')
