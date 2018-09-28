@@ -1,5 +1,5 @@
 {
-  "name": "sub1",
+  "name": "test2",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -7,7 +7,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cheetah-grid": "*",
-    "vue-cheetah-grid": "*"
+    "mrpm": "^1.0.0"
   }
 }

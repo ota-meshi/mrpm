@@ -1,0 +1,14 @@
+{
+  "name": "sub1",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheetah-grid": "*",
+    "vue-cheetah-grid": "*",
+    "vue": "^2.5.16"
+  }
+}
