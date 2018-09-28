@@ -3,8 +3,8 @@
     "default": {
       "packages": [
         "package.json",
-        "testpkg/packages/sub1/package.json",
-        "testpkg/packages/sub2/package.json"
+        "test-fixtures/testpkg/packages/sub1/package.json",
+        "test-fixtures/testpkg/packages/sub2/package.json"
       ]
     }
   }
