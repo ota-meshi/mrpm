@@ -1,11 +1,12 @@
 {
   "name": "mrpm",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "monorepo package manager",
   "main": "index.js",
   "scripts": {
     "test": "nyc --reporter=lcov mocha tests/**/*.js --reporter dot --timeout 30000",
-    "test:d": "mocha --inspect --debug-brk tests/**/*.js --reporter dot",
+    "test:d": "mocha --inspect --debug-brk tests/**/*.js --reporter dot --timeout 30000",
+    "test:base": "mocha tests/**/*.js --reporter dot --timeout 30000",
     "lint": "eslint lib tests",
     "lint:fix": "eslint lib tests --fix",
     "pretest": "npm run -s lint"
