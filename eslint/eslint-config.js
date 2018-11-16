@@ -18,7 +18,10 @@ module.exports = {
   ],
   'rules': {
 
-    'semi': ['error', 'never'],
+    'semi': [
+      'error',
+      'never'
+    ],
     'no-console': 'off',
     'no-return-assign': 'off',
     'no-prototype-builtins': 'off',
@@ -37,7 +40,10 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-warning-comments': 'warn',
     'vars-on-top': 'off',
-    'wrap-iife': ['error', 'any'],
+    'wrap-iife': [
+      'error',
+      'any'
+    ],
     'yoda': [
       'error',
       'never',
@@ -51,7 +57,10 @@ module.exports = {
       'error',
       {'vars': 'all', 'args': 'none'}
     ],
-    'no-use-before-define': ['error', {'functions': false, 'classes': false}],
+    'no-use-before-define': [
+      'error',
+      {'functions': false, 'classes': false}
+    ],
     'callback-return': 'off',
     'global-require': 'off',
     'no-process-env': 'off',
@@ -93,7 +102,15 @@ module.exports = {
     'lines-around-comment': 'off',
     'max-len': [
       'error',
-      {'code': 120, 'tabWidth': 4, 'ignoreComments': true, 'ignoreTrailingComments': true, 'ignoreStrings': true, 'ignoreRegExpLiterals': true, 'ignoreTemplateLiterals': true}
+      {
+        'code': 120,
+        'tabWidth': 4,
+        'ignoreComments': true,
+        'ignoreTrailingComments': true,
+        'ignoreStrings': true,
+        'ignoreRegExpLiterals': true,
+        'ignoreTemplateLiterals': true
+      }
     ],
     'max-lines': 'off',
     'max-params': 'off',
@@ -124,8 +141,14 @@ module.exports = {
       {'allowMultiplePropertiesPerLine': true}
     ],
     'one-var': 'off',
-    'padded-blocks': ['error', 'never'],
-    'quote-props': ['error', 'consistent'],
+    'padded-blocks': [
+      'error',
+      'never'
+    ],
+    'quote-props': [
+      'error',
+      'consistent'
+    ],
     'require-jsdoc': 'off',
     'sort-keys': 'off',
     'sort-vars': 'off',
