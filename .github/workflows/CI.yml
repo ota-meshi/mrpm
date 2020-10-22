@@ -1,0 +1,43 @@
+name: CI
+on:
+  push:
+    branches: [master, try]
+  pull_request:
+    branches: [master]
+  schedule:
+  - cron: 0 0 * * 0
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - name: Install Packages
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+
+  test:
+    name: Test
+    strategy:
+      matrix:
+        node: [8, 10, 12, 14]
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Install Node.js v${{ matrix.node }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node }}
+    - name: Install Packages
+      run: npm ci
+    - name: Test
+      run: npm run test
