@@ -7,7 +7,6 @@
 [![npm](https://img.shields.io/npm/dy/mrpm.svg)](http://www.npmtrends.com/mrpm)
 [![npm](https://img.shields.io/npm/dt/mrpm.svg)](http://www.npmtrends.com/mrpm)
 [![Build Status](https://travis-ci.org/ota-meshi/mrpm.svg?branch=master)](https://travis-ci.org/ota-meshi/mrpm)
-[![Greenkeeper badge](https://badges.greenkeeper.io/ota-meshi/mrpm.svg)](https://greenkeeper.io/)  
 
 MonoRepo Package Manager.  
 This is the CLI tool that runs the npm command for each monorepo projects.
