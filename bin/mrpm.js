@@ -4,7 +4,7 @@
 
 
 const chalk = require('chalk')
-const mrpm = require('mrpm')
+const mrpm = require('../index')
 
 const command = process.argv[2]
 const args = process.argv.slice(3)
@@ -18,6 +18,11 @@ function handleDone(err) {
   }
 }
 
-mrpm(opts, command, args, handleDone)
+mrpm(
+    opts,
+    command,
+    args,
+    handleDone
+)
 
 

@@ -6,13 +6,37 @@ const publish = require('./lib/cmd/publish')
 const run = require('./lib/cmd/run')
 
 
-module.exports = function mrpm(opts, command, args, cb) {
-  if (command === 'publish') {
-    return publish(opts, args, cb)
-  } else if (command === 'run') {
-    return run(opts, args, cb)
-  } else {
-    return cmd(opts, command, args, cb)
+module.exports = async function mrpm(opts, command, args, cb) {
+  try {
+    let r
+    if (command === 'publish') {
+      r = await publish(
+          opts,
+          args
+      )
+    } else if (command === 'run') {
+      r = await run(
+          opts,
+          args
+      )
+    } else {
+      r = await cmd(
+          opts,
+          command,
+          args
+      )
+    }
+    if (cb) {
+      cb(null)
+    }
+
+    return r
+  } catch (e) {
+    if (cb) {
+      cb(e)
+    }
+    // throw e
+    return undefined
   }
 }
 
