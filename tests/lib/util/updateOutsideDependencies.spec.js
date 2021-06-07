@@ -110,7 +110,7 @@ describe(
                   ),
                   'utf8'
               ))
-              expect(content1.dependencies.mrpm).to.equal('^1.0.0')
+              expect(content1.dependencies.mrpm).to.equal('^1.0.1')
               const content2 = JSON.parse(fs.readFileSync(
                   path.resolve(
                       fixturesRoot,
@@ -118,7 +118,7 @@ describe(
                   ),
                   'utf8'
               ))
-              expect(content2.dependencies.mrpm).to.equal('^1.0.0')
+              expect(content2.dependencies.mrpm).to.equal('^1.0.1')
             })
       )
     }

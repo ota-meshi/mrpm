@@ -7,6 +7,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mrpm": "^1.0.0"
+    "mrpm": "^1.0.1"
   }
 }
