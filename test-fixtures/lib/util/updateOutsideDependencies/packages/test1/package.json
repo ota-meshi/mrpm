@@ -7,7 +7,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cheetah-grid": "^0.23.0",
+    "cheetah-grid": "^1.0.0",
     "mrpm": "^1.0.1"
   }
 }
