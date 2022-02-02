@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 14
       - name: Install Packages
-        run: npm ci
+        run: npm i
       - name: Lint
         run: npm run lint
 
@@ -38,6 +38,6 @@ jobs:
       with:
         node-version: ${{ matrix.node }}
     - name: Install Packages
-      run: npm ci
+      run: npm i
     - name: Test
       run: npm run test
