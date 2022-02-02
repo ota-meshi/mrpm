@@ -101,6 +101,12 @@ mrpm run xxx
 mrpm prune
 ```
 
+### Options
+
+* `--mrpm-max-workers=<num>`
+
+Specifies the maximum number of workers the worker-pool will spawn for running commands.
+
 ## Example of Deploy with [Travis CI](https://travis-ci.org/).
 
 ### files

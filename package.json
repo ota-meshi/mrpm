@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nyc --reporter=lcov mocha tests/**/*.js --reporter dot --timeout 30000",
-    "test:d": "mocha --inspect-brk tests/**/*.js --reporter dot --timeout 30000",
+    "test:d": "mocha tests/**/*.js --reporter dot --timeout 30000",
     "test:base": "mocha tests/**/*.js --reporter dot --timeout 30000",
     "lint": "eslint lib tests",
     "lint:fix": "eslint lib tests --fix"
@@ -36,6 +36,8 @@
   "homepage": "https://github.com/ota-meshi/mrpm#readme",
   "devDependencies": {
     "@types/find-config": "^1.0.0",
+    "@types/glob": "^7.2.0",
+    "@types/node": "^17.0.14",
     "@types/semver": "^7.3.4",
     "@types/toposort": "^2.0.3",
     "chai": "^4.2.0",
