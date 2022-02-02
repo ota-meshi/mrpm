@@ -41,7 +41,7 @@
     "@types/semver": "^7.3.4",
     "@types/toposort": "^2.0.3",
     "chai": "^4.2.0",
-    "eslint": "^7.11.0",
+    "eslint": "^8.0.0",
     "eslint-plugin-node": "^11.1.0",
     "mocha": "^7.2.0",
     "nyc": "^15.1.0",
