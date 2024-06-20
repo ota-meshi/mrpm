@@ -9,6 +9,6 @@
   "dependencies": {
     "cheetah-grid": "*",
     "vue-cheetah-grid": "*",
-    "vue": "^2.5.16"
+    "vue": "^3.0.0"
   }
 }
